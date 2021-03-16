@@ -14,16 +14,19 @@ hr{
 
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 text-align: center;
-    -webkit-text-fill-color: #2E8B57;
-    border: solid 1px rgb(202, 228, 228);
-    border-width: 25px;
+    -webkit-text-fill-color: #368056;
+
+   
     font-weight: bold;
     }
 
     img{
-        width: 350px;
+        width:300px;
+        height: 350px;
         margin-left: 150px;
         margin-right: -150px;
+        border: blueviolet 1px solid;
+        border-radius: 10px;
     
         
     }
@@ -50,5 +53,7 @@ color: rgb(74, 75, 73);
         opacity: 1;
         visibility: visible;
      
-      
+     
     }
+  
+   
