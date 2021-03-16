@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 
 let productName =
@@ -17,16 +18,19 @@ let counter = 25;
 
 //constructor
 function ProductChoice(name) {
-  this.name = name;
+  this.name = name.split('.')[0];
   this.view = 0;
   this.click = 0;
   this.path = `./assets/${name}`;
   ProductChoice.all.push(this);
 
 
+
 }
 
-
+// function handleSubmit(event){
+//   event.preventDefault();
+//   event.
 
 //render
 
@@ -104,13 +108,14 @@ function clickReact(event) {
   if (counter === 0) {
     threeImages.removeEventListener('click', clickReact);
     getResults();
+    savedToLocalStorage();
   }
 
 }
 
 
 
-
+// create chart
 
 function createChart() {
   let context = document.getElementById('myChart').getContext('2d');
@@ -124,31 +129,56 @@ function createChart() {
   for (let i = 0; i < ProductChoice.all.length; i++) {
     click.push(ProductChoice.all[i].click);
   }
-  console.log(productName, click);
+
   let chartObject = {
     type: 'bar',
     data: {
       labels: productName,
       datasets: [{
         label: ' voting results',
-        backgroundColor: 'rgb(149, 9, 38)',
-        borderColor: 'rgb(1, 7, 1)',
+        backgroundColor: 'rgb(230, 110, 40)',
+        borderColor: 'black',
+        pointBackgroundColor: 'rgba(220,220,220,1)',
         data: click,
         borderWidth: 1 ,
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
+
+      }]
+    },
+    options: {
+      legend: {
+        labels: {
+          fontColor: 'orange',
+          size:16,
+          weight:'bold',
+
         }
+      },
+      title: {
+        display: true,
+        fontColor: 'blue',
 
+      } ,
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true,
+            fontColor: 'red',
+            weight:'bold',
 
-
+          },
+        }],
+        xAxes: [{
+          ticks: {
+            fontColor: 'green',
+            size:20,
+            weight:'bold',
+          },
+        }]
       }
-      ]
-
 
     }
-
   };
+  // eslint-disable-next-line no-undef
   let myChart = new Chart(context, chartObject);
 }
 
@@ -165,9 +195,23 @@ function getResults() {
   }
 }
 
+function savedToLocalStorage(){
+  localStorage.setItem('productName', JSON.stringify(ProductChoice.all));
 
+}
 
+function getData(){
+  let getInfo = localStorage.getItem('productName');
 
+  if (getInfo !== null){
+    ProductChoice.all= JSON.parse(getInfo);
+    getResults();
+    createChart();
+  }
+}
+getData();
+
+// threeImages.addEventListener('click', savedToLocalStorage);
 
 
 
