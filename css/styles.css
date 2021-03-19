@@ -5,19 +5,59 @@
 body{
 background-color: #ADD8E6;
 }
-hr{
-    height: 50px;
-    background-color: rgb(142, 146, 146);
+
+
+ h2{
+    font-size: 37px;
+    color:#F0F8FF;
+    font-family: 'Berkshire Swash', cursive;
+    -webkit-text-stroke: 0.1px #2c2c31 ;
+    font-weight: bold;
+    text-shadow: 2px 2px #1a0505;
+
+    
 }
-   h2 ,h3 {
+
+@keyframes fontColorh3 {
+    from { background-color:#fafafaf3;}
+    to { background-color: #e9ec1d;}
+  }
+main h3{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 30px;
+    color: #9932CC;
+    animation-name: fontColorh3;
+    animation-duration: 20s;
+    background-color: rgb(243, 241, 239); width: fit-content;display: inline-block;
+    margin-left: 500px;
+    transition: height  2s;
+    transition: width  2s;
+   
+
+
+
+  
+}
+main h3:hover{
+   text-align: center;
+width: 450px;
+    height: 50px;
+    transform: rotate(10deg);
+    transform: scale(1, 2);
+}
+#headerImage {
        display: inline block;
 
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 text-align: center;
-    -webkit-text-fill-color: #368056;
-
    
+   background-image: url(https://assets-us-01.kc-usercontent.com/0542d611-b6d8-4320-a4f4-35ac5cbf43a6/78e4e5f5-29af-41c0-b81f-0897202336d1/bus-insurance-header.jpg); 
+   height: 230px ;   background-repeat: no-repeat; background-size: cover; 
+   background-position: center;margin-top: -10px;border: 2px solid rgb(56, 219, 41); 
+   border-radius: 20px; 
     font-weight: bold;
+
     }
 
     img{
@@ -25,6 +65,7 @@ text-align: center;
         height: 350px;
         margin-left: 150px;
         margin-right: -150px;
+        margin-top: 20px;
         border: blueviolet 1px solid;
         border-radius: 10px;
     
@@ -52,8 +93,40 @@ color: rgb(74, 75, 73);
     img:hover {
         opacity: 1;
         visibility: visible;
-     
+        transform: scale(1.1,1.2);
+
      
     }
   
-   
+
+    hr{
+        height: 150px;
+        background-color: rgb(142, 146, 146);
+        background-color:#26272b;
+        padding:45px 0 20px;
+        font-size:15px;
+        line-height:24px;
+        color:#737373;
+        width: 1325px;
+    }
+
+h6  {
+    font-size: 20px;
+    margin-top: -150px;
+    color: #FF8C00;
+    margin-left: 100px;
+
+}
+h6:hover{
+    transform: scaleY(1.5);
+    transform: translate(10px, 5px);
+
+}
+footer p  {
+    font-size: 20px;
+    margin-top: -40px;
+    color: #8FBC8F;
+    margin-left: 100px;
+    font-style: italic;
+ 
+}
